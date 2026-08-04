@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls ~/Desktop | head -50)",
+      "Bash(npm -v)",
+      "Bash(lsof -nP -iTCP -sTCP:LISTEN)",
+      "Bash(npm install *)",
+      "Bash(npx tsc *)",
+      "Bash(echo \"TSC exit: $?\")"
+    ]
+  }
+}
