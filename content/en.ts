@@ -10,7 +10,7 @@ export const en: SiteContent = {
   },
 
   nav: {
-    philosophy: 'House',
+    philosophy: 'Essentials',
     services: 'Expertise',
     method: 'Approach',
     contact: 'Contact',
@@ -31,12 +31,12 @@ export const en: SiteContent = {
   philosophy: {
     eyebrow: 'Why we exist',
     title: {
-      lead: 'Time is the one resource',
-      accent: 'we cannot replace for you.'
+      lead: 'One call.',
+      accent: 'We take it from there.'
     },
     columns: [
-      'Private Office Consulting brings advisory, concierge and operational coordination together under a single point of contact. We step in when a request calls for speed, judgement, access and absolute discretion.',
-      'No impersonal catalogue of services. Every engagement begins by understanding what is genuinely at stake, then building the most direct, the most secure and the most elegant answer to it.'
+      'Private Office Consulting brings advisory, concierge and coordination together in one team, with a single point of contact who sees things through to the end. We step in wherever speed, sound judgement and absolute confidentiality are required.',
+      'No impersonal packages. Every engagement starts with a single question — what genuinely matters here — and only then do we build the shortest, most reliable answer.'
     ]
   },
 

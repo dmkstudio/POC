@@ -10,7 +10,7 @@ export const fr: SiteContent = {
   },
 
   nav: {
-    philosophy: 'Maison',
+    philosophy: "L'essentiel",
     services: 'Expertise',
     method: 'Approche',
     contact: 'Contact',
@@ -22,7 +22,7 @@ export const fr: SiteContent = {
 
   hero: {
     eyebrow: 'Cannes · Monaco · International',
-    lines: ['Discretion.', 'Strategy.', 'Execution.'],
+    lines: ['Discrétion.', 'Stratégie.', 'Exécution.'],
     intro:
       'Cabinet privé de conseil et de conciergerie pour clients exigeants, familles et dirigeants.',
     cta: 'Découvrir'
@@ -31,12 +31,12 @@ export const fr: SiteContent = {
   philosophy: {
     eyebrow: "Notre raison d'être",
     title: {
-      lead: 'Votre temps est la seule ressource',
-      accent: 'que nous ne pouvons pas remplacer.'
+      lead: 'Un appel.',
+      accent: "Le reste, c'est notre travail."
     },
     columns: [
-      "Private Office Consulting réunit conseil, conciergerie et coordination opérationnelle au sein d'un seul interlocuteur. Nous intervenons lorsque la demande exige vitesse, jugement, réseau et discrétion.",
-      "Pas de catalogue impersonnel. Chaque mission commence par comprendre l'enjeu réel, puis par construire la réponse la plus directe, la plus sûre et la plus élégante."
+      "Private Office Consulting réunit conseil, conciergerie et coordination au sein d'une seule équipe, avec un point de contact unique qui suit votre dossier jusqu'au bout. Nous intervenons là où la rapidité, le bon sens et une confidentialité absolue sont nécessaires.",
+      "Pas de prestations standardisées. Chaque mission commence par une seule question — ce qui compte vraiment ici — puis nous construisons la réponse la plus directe et la plus sûre."
     ]
   },
 

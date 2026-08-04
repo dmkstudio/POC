@@ -40,7 +40,6 @@ export type SiteContent = {
 
   hero: {
     eyebrow: string;
-    /** Brand line — intentionally identical across locales. */
     lines: [string, string, string];
     intro: string;
     cta: string;

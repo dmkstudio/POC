@@ -45,8 +45,6 @@ export function Hero({ content }: { content: SiteContent }) {
           </a>
         </div>
       </div>
-
-      <div className="hero-index">01 / 05</div>
     </section>
   );
 }
