@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import type { SiteContent } from '@/content';
 import type { Locale } from '@/lib/i18n';
 import { LanguageSwitcher } from './LanguageSwitcher';
+import { Logo } from './Logo';
 import { useMotion } from './MotionProvider';
 
 const links = [
@@ -47,7 +48,10 @@ export function Header({ content, locale }: { content: SiteContent; locale: Loca
 
       <header className={`nav ${scrolled ? 'is-solid' : ''}`}>
         <a className="brand" href="#hero" onClick={go('#hero')}>
-          Private Office <i>Consulting</i>
+          <Logo className="brand-mark" />
+          <span>
+            Private Office <i>Consulting</i>
+          </span>
         </a>
 
         <nav className="desktop-nav" aria-label={content.nav.philosophy}>

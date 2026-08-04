@@ -165,11 +165,19 @@ button {
 }
 
 .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   font-size: 11px;
   letter-spacing: 0.22em;
   font-weight: 500;
   text-transform: uppercase;
   white-space: nowrap;
+}
+
+.brand-mark {
+  flex: none;
+  color: inherit;
 }
 
 .brand i {
