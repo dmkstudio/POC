@@ -122,11 +122,21 @@ export type SiteContent = {
   };
 };
 
-/** Scene imagery is locale-independent. */
+/**
+ * Scene imagery is locale-independent. Each entry is matched to the scene of
+ * the same index in every locale file, so the picture always states what the
+ * copy beside it says:
+ *
+ *   1  every request, resolved      — one advisor at work late, in control
+ *   2  decide with precision        — documents studied before anything is signed
+ *   3  one vision, one contact      — deliberately a single person, alone
+ *   4  discretion as the foundation — an unmarked door, nobody in frame
+ *   5  down to the last detail      — the handover, the very end of the job
+ */
 export const sceneImages = [
-  '/images/harbor-executive.webp',
-  '/images/signing-desk.webp',
-  '/images/agreement-meeting.webp',
-  '/images/handshake.webp',
+  '/images/office-night.webp',
+  '/images/documents-study.webp',
+  '/images/single-advisor.webp',
+  '/images/discreet-entrance.webp',
   '/images/key-exchange.webp'
 ] as const;

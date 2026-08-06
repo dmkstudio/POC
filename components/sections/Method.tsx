@@ -8,7 +8,7 @@ export function Method({ content }: { content: SiteContent }) {
     <section id="method" className="method">
       <div className="method-image">
         <Image
-          src="/images/agreement-meeting.webp"
+          src="/images/planning-desk.webp"
           alt=""
           fill
           quality={88}

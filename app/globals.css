@@ -452,6 +452,27 @@ button {
 
 /* 5. Philosophy ------------------------------------------------------------ */
 
+.statement {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Atmosphere, not illustration. The body columns sit on the right, so the
+   photograph is anchored bottom-left and faded out before it reaches them —
+   the type never lands on busy pixels. */
+.statement-media {
+  position: absolute;
+  z-index: -1;
+  inset: 25% 35% 0 0;
+  opacity: 0.3;
+  -webkit-mask-image: linear-gradient(115deg, #000 15%, transparent 70%);
+  mask-image: linear-gradient(115deg, #000 15%, transparent 70%);
+}
+
+.statement-media img {
+  object-fit: cover;
+}
+
 .statement h2 {
   font-size: clamp(42px, 6.2vw, 96px);
   max-width: 1150px;
@@ -698,9 +719,26 @@ button {
 /* 9. Territory ------------------------------------------------------------- */
 
 .territory {
+  position: relative;
+  isolation: isolate;
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 9vw;
+}
+
+/* The coastline sits behind the whole section, dimmed and faded top and
+   bottom so it blends into the black page rather than forming a hard band. */
+.territory-media {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  opacity: 0.28;
+  -webkit-mask-image: linear-gradient(180deg, transparent, #000 35%, #000 65%, transparent);
+  mask-image: linear-gradient(180deg, transparent, #000 35%, #000 65%, transparent);
+}
+
+.territory-media img {
+  object-fit: cover;
 }
 
 .territory h2 {
@@ -1107,6 +1145,18 @@ footer .brand {
   .statement h2 {
     font-size: 42px;
     margin-bottom: 44px;
+  }
+
+  /* One narrow column on phones — a side-masked image would only muddy it. */
+  .statement-media {
+    inset: 0;
+    opacity: 0.22;
+    -webkit-mask-image: linear-gradient(180deg, transparent, #000 45%, transparent);
+    mask-image: linear-gradient(180deg, transparent, #000 45%, transparent);
+  }
+
+  .territory-media {
+    opacity: 0.2;
   }
 
   .statement-grid {
