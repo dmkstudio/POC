@@ -80,7 +80,7 @@ export function Services({ content }: { content: SiteContent }) {
   };
 
   return (
-    <section id="services" className="services section-pad">
+    <section id="services" className="services section-pad" data-snap>
       <div className="gold-orbit" aria-hidden />
 
       <div className="services-heading">

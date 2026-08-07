@@ -5,7 +5,7 @@ export function Philosophy({ content }: { content: SiteContent }) {
   const { philosophy } = content;
 
   return (
-    <section id="philosophy" className="statement section-pad">
+    <section id="philosophy" className="statement section-pad" data-snap>
       {/* "One call" — a phone put down on marble, held far back so it reads as
           texture behind the type rather than a picture competing with it. */}
       <div className="statement-media" aria-hidden>

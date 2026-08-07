@@ -59,7 +59,7 @@ export function Cinema({ content }: { content: SiteContent }) {
 
       <div className="cinema-copy-track">
         {content.scenes.map((scene) => (
-          <article className="cinema-scene" key={scene.title.lead}>
+          <article className="cinema-scene" key={scene.title.lead} data-snap>
             <div>
               <p className="eyebrow">{scene.kicker}</p>
               <h3>

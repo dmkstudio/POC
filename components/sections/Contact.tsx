@@ -69,7 +69,7 @@ export function Contact({ content, locale }: { content: SiteContent; locale: Loc
   const fieldError = (field: keyof FieldErrors) => (errors[field] ? true : undefined);
 
   return (
-    <section id="contact" className="contact section-pad">
+    <section id="contact" className="contact section-pad" data-snap>
       <div className="contact-intro">
         <p className="eyebrow" data-reveal>
           {contact.eyebrow}

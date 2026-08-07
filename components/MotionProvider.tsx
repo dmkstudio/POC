@@ -1,6 +1,7 @@
 'use client';
 
 import Lenis from 'lenis';
+import Snap from 'lenis/snap';
 import { createContext, useCallback, useContext, useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -24,6 +25,7 @@ export const useMotion = () => useContext(MotionContext);
 export function MotionProvider({ children }: { children: React.ReactNode }) {
   const root = useRef<HTMLDivElement>(null);
   const lenisRef = useRef<Lenis | null>(null);
+  const snapRef = useRef<Snap | null>(null);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -40,6 +42,35 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
       };
       frame = requestAnimationFrame(loop);
       lenis.on('scroll', ScrollTrigger.update);
+
+      /**
+       * Every `[data-snap]` block settles to the top of the viewport, giving
+       * the page a beat between one full screen and the next.
+       *
+       * Desktop only: the sections are exactly one screen tall there. On phones
+       * the cinema block stacks and the panels grow past the viewport, where
+       * snapping would fight the reader instead of helping.
+       *
+       * `proximity` at half a viewport: the blocks are one screen apart, so
+       * anywhere you stop is inside some block's pull and it settles — the
+       * feel of `mandatory` without its trap, since the contact form and the
+       * footer run past a single screen and still need to be reachable.
+       */
+      if (window.matchMedia('(min-width: 901px)').matches) {
+        const snap = new Snap(lenis, {
+          type: 'proximity',
+          duration: 0.9,
+          distanceThreshold: '50%',
+          // Longer than Lenis's own 1.15s glide. Snapping sooner judges a
+          // position the page is still travelling through and drags the
+          // reader back to the block they were leaving.
+          debounce: 1200
+        });
+        document
+          .querySelectorAll<HTMLElement>('[data-snap]')
+          .forEach((el) => snap.addElement(el, { align: ['start'] }));
+        snapRef.current = snap;
+      }
     }
 
     const onScroll = () => setScrolled(window.scrollY > window.innerHeight * 0.6);
@@ -61,7 +92,11 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
             opacity: 1,
             duration: 1.1,
             ease: 'power3.out',
-            scrollTrigger: { trigger: el, start: 'top 84%' }
+            // Fires as soon as the element is on screen at all. With the page
+            // snapping a block at a time, anything sitting near the foot of a
+            // block would otherwise never cross a stricter threshold and would
+            // stay invisible for as long as that block is parked.
+            scrollTrigger: { trigger: el, start: 'top 96%' }
           }
         )
       );
@@ -90,6 +125,8 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
       window.removeEventListener('load', refresh);
       window.removeEventListener('scroll', onScroll);
       cancelAnimationFrame(frame);
+      snapRef.current?.destroy();
+      snapRef.current = null;
       lenisRef.current?.destroy();
       lenisRef.current = null;
       ctx.revert();

@@ -9,7 +9,7 @@ export function Hero({ content }: { content: SiteContent }) {
   const { hero } = content;
 
   return (
-    <section id="hero" className="hero">
+    <section id="hero" className="hero" data-snap>
       <div className="hero-media">
         <Image
           src="/images/harbor-executive.webp"
