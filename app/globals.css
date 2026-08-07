@@ -453,20 +453,53 @@ button {
   justify-content: center;
 }
 
-/* Atmosphere, not illustration. The body columns sit on the right, so the
-   photograph is anchored bottom-left and faded out before it reaches them —
-   the type never lands on busy pixels. */
+/* The photograph fills the whole block, like the cinema section, rather than
+   sitting in it as a cropped fragment. */
 .statement-media {
   position: absolute;
-  z-index: -1;
-  inset: 25% 35% 0 0;
-  opacity: 0.3;
-  -webkit-mask-image: linear-gradient(115deg, #000 15%, transparent 70%);
-  mask-image: linear-gradient(115deg, #000 15%, transparent 70%);
+  z-index: -2;
+  inset: 0;
+  overflow: hidden;
 }
 
 .statement-media img {
   object-fit: cover;
+}
+
+/* Holds the copy legible over the picture without flattening it: darkest
+   under the headline on the left, opening up toward the right. */
+.statement-overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 8, 6, 0.9) 0%,
+      rgba(8, 8, 6, 0.72) 32%,
+      rgba(8, 8, 6, 0.46) 66%,
+      rgba(8, 8, 6, 0.28) 100%
+    ),
+    /* A band of extra shade across the rows the body copy occupies — the
+       lamp and desk sit right behind it and swallowed the text. */
+    linear-gradient(
+      180deg,
+      transparent 34%,
+      rgba(8, 8, 6, 0.62) 44%,
+      rgba(8, 8, 6, 0.66) 68%,
+      transparent 80%
+    ),
+    linear-gradient(
+      180deg,
+      rgba(8, 8, 6, 0.5) 0%,
+      transparent 26%,
+      transparent 64%,
+      rgba(8, 8, 6, 0.55) 100%
+    );
+}
+
+.statement-copy {
+  position: relative;
 }
 
 .statement h2 {
@@ -836,8 +869,8 @@ button {
   text-align: center;
   min-height: 100svh;
   /* Sat too far below the expertise block at the full section padding. */
-  padding-top: 80px;
-  padding-bottom: 100px;
+  padding-top: 56px;
+  padding-bottom: 76px;
 }
 
 .contact-intro {
@@ -845,8 +878,8 @@ button {
 }
 
 .contact h2 {
-  font-size: clamp(44px, 5.4vw, 84px);
-  margin: 24px 0;
+  font-size: clamp(42px, 5vw, 76px);
+  margin: 18px 0;
 }
 
 .contact-lede {
@@ -856,32 +889,65 @@ button {
   line-height: 1.8;
 }
 
+/* Frosted glass rather than a flat box: a translucent pane that picks up the
+   page behind it, a bright hairline along the top edge where light would
+   catch, and a soft drop shadow to lift it off the background. */
 .contact-panel {
+  position: relative;
   width: min(880px, 100%);
-  margin-top: 70px;
-  padding: 46px;
+  margin-top: 40px;
+  padding: 34px 38px 30px;
   text-align: left;
-  background: rgba(255, 255, 255, 0.022);
-  border: 1px solid var(--line);
-  border-radius: 4px;
+  border-radius: 30px;
+  background: linear-gradient(
+    160deg,
+    rgba(255, 255, 255, 0.075) 0%,
+    rgba(255, 255, 255, 0.028) 42%,
+    rgba(255, 255, 255, 0.015) 100%
+  );
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(26px) saturate(150%);
+  -webkit-backdrop-filter: blur(26px) saturate(150%);
+  box-shadow: 0 34px 80px -30px rgba(0, 0, 0, 0.75),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+/* The specular sheen across the top of the pane. */
+.contact-panel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    150deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.04) 34%,
+    transparent 62%
+  );
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
 }
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 20px;
 }
 
 .field-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 26px;
+  gap: 22px;
 }
 
 .field {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 9px;
 }
 
 .field > span {
@@ -899,35 +965,38 @@ button {
   opacity: 0.6;
 }
 
+/* Soft-cornered wells instead of bare underlines — each field reads as its
+   own recessed pane inside the glass. */
 .field input,
 .field select,
 .field textarea {
   width: 100%;
-  background: transparent;
-  border: 0;
-  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.045);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
   color: var(--ivory);
   font-family: inherit;
   font-size: 15px;
   font-weight: 300;
-  padding: 12px 0;
-  border-radius: 0;
-  transition: border-color 0.3s;
+  padding: 15px 18px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
 }
 
 .field textarea {
   resize: vertical;
-  min-height: 118px;
+  min-height: 104px;
   line-height: 1.7;
 }
 
 .field select {
   appearance: none;
   cursor: pointer;
-  background-image: linear-gradient(45deg, transparent 50%, var(--muted) 50%),
-    linear-gradient(135deg, var(--muted) 50%, transparent 50%);
-  background-position: right 6px center, right 1px center;
-  background-size: 5px 5px, 5px 5px;
+  padding-right: 44px;
+  background-image: linear-gradient(45deg, transparent 50%, var(--gold-soft) 50%),
+    linear-gradient(135deg, var(--gold-soft) 50%, transparent 50%);
+  background-position: calc(100% - 22px) center, calc(100% - 16px) center;
+  background-size: 6px 6px, 6px 6px;
   background-repeat: no-repeat;
 }
 
@@ -938,18 +1007,30 @@ button {
 
 .field input::placeholder,
 .field textarea::placeholder {
-  color: rgba(164, 157, 145, 0.5);
+  color: rgba(164, 157, 145, 0.55);
+}
+
+.field input:hover,
+.field select:hover,
+.field textarea:hover {
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .field input:focus,
 .field select:focus,
 .field textarea:focus {
   outline: none;
-  border-bottom-color: var(--gold);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(183, 150, 85, 0.65);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(183, 150, 85, 0.14);
 }
 
 .field [aria-invalid='true'] {
-  border-bottom-color: #c2603f;
+  border-color: rgba(194, 96, 63, 0.7);
+}
+
+.field [aria-invalid='true']:focus {
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25), 0 0 0 4px rgba(194, 96, 63, 0.16);
 }
 
 .field-error {
@@ -986,7 +1067,7 @@ button {
   flex: none;
   border: 0;
   border-radius: 999px;
-  padding: 18px 34px;
+  padding: 18px 36px;
   background: var(--ivory);
   color: var(--ink);
   font-size: 13px;
@@ -994,12 +1075,19 @@ button {
   letter-spacing: 0.12em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s, transform 0.3s var(--ease-out), opacity 0.3s;
+  box-shadow: 0 10px 26px -10px rgba(0, 0, 0, 0.7);
+  transition: background 0.3s, transform 0.3s var(--ease-out), box-shadow 0.3s,
+    opacity 0.3s;
 }
 
 .form-submit:hover:not(:disabled) {
   background: var(--gold-soft);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 34px -12px rgba(0, 0, 0, 0.8);
+}
+
+.form-submit:active:not(:disabled) {
+  transform: translateY(0);
 }
 
 .form-submit:disabled {
@@ -1044,7 +1132,7 @@ button {
 }
 
 .contact-actions {
-  margin-top: 56px;
+  margin-top: 38px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1336,8 +1424,9 @@ footer .brand {
   }
 
   .contact-panel {
-    margin-top: 46px;
-    padding: 26px 20px;
+    margin-top: 40px;
+    padding: 26px 20px 24px;
+    border-radius: 24px;
   }
 
   .field-row {

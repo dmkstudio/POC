@@ -51,20 +51,20 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
        * the cinema block stacks and the panels grow past the viewport, where
        * snapping would fight the reader instead of helping.
        *
-       * `proximity` at half a viewport: the blocks are one screen apart, so
-       * anywhere you stop is inside some block's pull and it settles — the
-       * feel of `mandatory` without its trap, since the contact form and the
-       * footer run past a single screen and still need to be reachable.
+       * Deliberately a light touch. A wide threshold turns the snap into a
+       * wall — a short scroll gets dragged straight back and the page refuses
+       * to let you leave the block. At a fifth of a viewport it only tidies up
+       * the last stretch once you have already committed to the next block,
+       * and anywhere in between is left alone.
        */
       if (window.matchMedia('(min-width: 901px)').matches) {
         const snap = new Snap(lenis, {
           type: 'proximity',
-          duration: 0.9,
-          distanceThreshold: '50%',
-          // Longer than Lenis's own 1.15s glide. Snapping sooner judges a
-          // position the page is still travelling through and drags the
-          // reader back to the block they were leaving.
-          debounce: 1200
+          duration: 0.7,
+          distanceThreshold: '20%',
+          // Sits just past Lenis's own glide, so the snap reads a settled
+          // position rather than one the page is still travelling through.
+          debounce: 900
         });
         document
           .querySelectorAll<HTMLElement>('[data-snap]')
