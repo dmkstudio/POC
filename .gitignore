@@ -1,5 +1,7 @@
 .next
 .next-build
+.next-check
 node_modules
 .env*.local
 .DS_Store
+.claude/agent-log/

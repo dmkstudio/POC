@@ -69,44 +69,74 @@ export const en: SiteContent = {
   ],
 
   services: {
-    eyebrow: 'One office. Six directions.',
+    eyebrow: 'One office. Five directions.',
     title: { lead: 'Expertise that reaches wide.', accent: 'Execution that stays consistent.' },
+    toggleLabel: 'Show the services under {name}',
+    discussLabel: 'Discuss a request',
+    custom: {
+      question: 'Your request does not fit any of these categories? That is exactly where we are most useful.',
+      cta: 'Bespoke request'
+    },
     items: [
       {
-        key: 'private-office',
-        n: '01',
-        title: 'Private Office',
-        copy: 'Personal coordination, confidential requests, diary management and bespoke execution.'
-      },
-      {
         key: 'business',
-        n: '02',
-        title: 'Business & Advisory',
-        copy: 'Sourcing, analysis, negotiation, trusted partners and hands-on operational support.'
+        n: '01',
+        title: 'Business & administration',
+        copy: 'Your project. Our expertise.',
+        services: [
+          'Company formation',
+          'Recruitment and HR',
+          'Legal support',
+          'Banking and insurance',
+          'Business introductions',
+          'Administrative procedures'
+        ]
       },
       {
         key: 'property',
+        n: '02',
+        title: 'Property & management',
+        copy: 'Your home. Under control.',
+        services: [
+          'Search and rental',
+          'Property management',
+          'Renovation and construction',
+          'Upkeep and maintenance',
+          'Security and protection'
+        ]
+      },
+      {
+        key: 'relocation',
         n: '03',
-        title: 'Property',
-        copy: 'Search, acquisition, villa management, renovation, household staff and long-term value.'
+        title: 'Relocation & integration',
+        copy: 'A new life. From day one.',
+        services: [
+          'End-to-end support',
+          'Schools and education',
+          'Documents and residency',
+          'Moving and settling in',
+          'Integration and local network'
+        ]
       },
       {
         key: 'mobility',
         n: '04',
-        title: 'Mobility',
-        copy: 'Chauffeur, private transfers, aviation, premium vehicles and international logistics.'
+        title: 'Mobility & comfort',
+        copy: 'Every day. Effortless.',
+        services: [
+          'Transfers and chauffeur',
+          'Personal shopping',
+          'Medical assistance',
+          'Household staff',
+          'Logistics and deliveries'
+        ]
       },
       {
-        key: 'yachting',
+        key: 'brand',
         n: '05',
-        title: 'Yachting & Events',
-        copy: 'Yachts, private experiences, hard-to-secure bookings and confidential events.'
-      },
-      {
-        key: 'security',
-        n: '06',
-        title: 'Security & Staff',
-        copy: 'Vetted personnel, close protection, discreet presence and supplier coordination.'
+        title: 'Personal brand',
+        copy: 'Your image. Wherever it matters.',
+        services: ['Website and digital presence', 'Reputation and media relations']
       }
     ]
   },

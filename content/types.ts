@@ -12,12 +12,11 @@ export type Headline = {
 };
 
 export type ServiceKey =
-  | 'private-office'
   | 'business'
   | 'property'
+  | 'relocation'
   | 'mobility'
-  | 'yachting'
-  | 'security';
+  | 'brand';
 
 export type SiteContent = {
   meta: {
@@ -58,14 +57,31 @@ export type SiteContent = {
     copy: string;
   }[];
 
+  /**
+   * Five directions, rendered as a single-open accordion: the row states the
+   * direction and its promise, the individual services stay folded away until
+   * that row is opened.
+   */
   services: {
     eyebrow: string;
     title: Headline;
+    /** Screen-reader label for the disclosure button. `{name}` is substituted. */
+    toggleLabel: string;
+    /** Link at the foot of an opened panel, through to the contact form. */
+    discussLabel: string;
+    /** Catch-all under the list, for requests that fit none of the directions. */
+    custom: {
+      question: string;
+      cta: string;
+    };
     items: {
       key: ServiceKey;
       n: string;
       title: string;
+      /** The promise, shown beside the title. */
       copy: string;
+      /** Revealed only when the direction is opened. */
+      services: string[];
     }[];
   };
 

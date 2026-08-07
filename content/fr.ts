@@ -69,44 +69,74 @@ export const fr: SiteContent = {
   ],
 
   services: {
-    eyebrow: 'Un office. Six directions.',
+    eyebrow: 'Un office. Cinq directions.',
     title: { lead: 'Une expertise étendue.', accent: 'Une exécution cohérente.' },
+    toggleLabel: 'Afficher les services de {name}',
+    discussLabel: 'Parler de votre demande',
+    custom: {
+      question: 'Votre demande n’entre dans aucune de ces catégories ? C’est précisément là que nous sommes le plus utiles.',
+      cta: 'Demande sur mesure'
+    },
     items: [
       {
-        key: 'private-office',
-        n: '01',
-        title: 'Private Office',
-        copy: "Coordination personnelle, demandes confidentielles, gestion d’agenda et exécution sur mesure."
-      },
-      {
         key: 'business',
-        n: '02',
-        title: 'Business & Advisory',
-        copy: 'Sourcing, analyse, négociation, partenaires de confiance et accompagnement opérationnel.'
+        n: '01',
+        title: 'Business & administration',
+        copy: 'Votre projet. Notre savoir-faire.',
+        services: [
+          'Création de société',
+          'Recrutement et RH',
+          'Accompagnement juridique',
+          'Banque et assurance',
+          'Relations d’affaires',
+          'Démarches administratives'
+        ]
       },
       {
         key: 'property',
+        n: '02',
+        title: 'Immobilier & gestion',
+        copy: 'Votre maison. Sous contrôle.',
+        services: [
+          'Recherche et location',
+          'Gestion immobilière',
+          'Travaux et construction',
+          'Entretien et maintenance',
+          'Sécurité et surveillance'
+        ]
+      },
+      {
+        key: 'relocation',
         n: '03',
-        title: 'Property',
-        copy: 'Recherche, acquisition, gestion de villas, travaux, personnel de maison et valorisation.'
+        title: 'Relocation & intégration',
+        copy: 'Une nouvelle vie. Dès le premier jour.',
+        services: [
+          'Accompagnement complet',
+          'Écoles et scolarité',
+          'Documents et titre de séjour',
+          'Déménagement et installation',
+          'Intégration et réseau local'
+        ]
       },
       {
         key: 'mobility',
         n: '04',
-        title: 'Mobility',
-        copy: 'Chauffeur, transferts privés, aviation, véhicules premium et logistique internationale.'
+        title: 'Mobilité & confort',
+        copy: 'Chaque jour. Sans effort.',
+        services: [
+          'Transferts et chauffeur',
+          'Personal shopping',
+          'Accompagnement médical',
+          'Personnel de maison',
+          'Logistique et livraisons'
+        ]
       },
       {
-        key: 'yachting',
+        key: 'brand',
         n: '05',
-        title: 'Yachting & Events',
-        copy: 'Yachts, expériences privées, réservations rares et événements confidentiels.'
-      },
-      {
-        key: 'security',
-        n: '06',
-        title: 'Security & Staff',
-        copy: 'Personnel qualifié, protection rapprochée, présence discrète et coordination de prestataires.'
+        title: 'Image personnelle',
+        copy: 'Votre image. Partout où il le faut.',
+        services: ['Site et présence digitale', 'Réputation et relations presse']
       }
     ]
   },
