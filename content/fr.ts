@@ -12,7 +12,6 @@ export const fr: SiteContent = {
   nav: {
     philosophy: "L'essentiel",
     services: 'Expertise',
-    method: 'Approche',
     contact: 'Contact',
     openMenu: 'Menu',
     closeMenu: 'Fermer',
@@ -139,55 +138,6 @@ export const fr: SiteContent = {
         services: ['Site et présence digitale', 'Réputation et relations presse']
       }
     ]
-  },
-
-  method: {
-    eyebrow: 'Notre méthode',
-    title: { lead: 'Simple pour vous.', accent: 'Rigoureux pour nous.' },
-    steps: [
-      {
-        n: '01',
-        title: 'Écouter',
-        copy: 'Clarifier la demande, les priorités, les contraintes et le niveau de confidentialité attendu.'
-      },
-      {
-        n: '02',
-        title: 'Structurer',
-        copy: "Identifier les options, vérifier chaque interlocuteur et construire le plan d’action."
-      },
-      {
-        n: '03',
-        title: 'Exécuter',
-        copy: 'Coordonner les partenaires, anticiper les risques et maintenir un suivi continu.'
-      },
-      {
-        n: '04',
-        title: 'Livrer',
-        copy: "Valider le résultat, transmettre l’essentiel et rester disponible après la mission."
-      }
-    ]
-  },
-
-  territory: {
-    eyebrow: 'Ancrage local · Portée internationale',
-    title: { lead: "Basés sur la Côte d’Azur.", accent: "Disponibles là où l’enjeu l’exige." },
-    cities: [
-      'Cannes',
-      'Monaco',
-      'Nice',
-      'Antibes',
-      'Saint-Tropez',
-      'Paris',
-      'Genève',
-      'Milan',
-      'Londres',
-      'Dubaï'
-    ]
-  },
-
-  manifesto: {
-    quote:
-      '« La vraie qualité ne se remarque pas par ce qu’elle montre, mais par tout ce qu’elle rend simple. »'
   },
 
   contact: {

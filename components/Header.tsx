@@ -11,7 +11,6 @@ import { useMotion } from './MotionProvider';
 const links = [
   { hash: '#philosophy', key: 'philosophy' },
   { hash: '#services', key: 'services' },
-  { hash: '#method', key: 'method' },
   { hash: '#contact', key: 'contact' }
 ] as const;
 

@@ -16,7 +16,24 @@ export const site = {
   },
   /** Used for the map/geo hints in structured data. */
   geo: { lat: 43.5528, lng: 7.0174 },
-  founded: '2024'
+  founded: '2024',
+  /**
+   * Where the firm operates. Not shown on the page — it feeds `areaServed` in
+   * the structured data, so search engines still connect the office to these
+   * cities. Kept in English, the language search engines index place names in.
+   */
+  areaServed: [
+    'Cannes',
+    'Monaco',
+    'Nice',
+    'Antibes',
+    'Saint-Tropez',
+    'Paris',
+    'Geneva',
+    'Milan',
+    'London',
+    'Dubai'
+  ]
 } as const;
 
 export const ogImage = '/images/harbor-executive.webp';

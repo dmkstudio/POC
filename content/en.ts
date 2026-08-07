@@ -12,7 +12,6 @@ export const en: SiteContent = {
   nav: {
     philosophy: 'Essentials',
     services: 'Expertise',
-    method: 'Approach',
     contact: 'Contact',
     openMenu: 'Menu',
     closeMenu: 'Close',
@@ -139,55 +138,6 @@ export const en: SiteContent = {
         services: ['Website and digital presence', 'Reputation and media relations']
       }
     ]
-  },
-
-  method: {
-    eyebrow: 'How we work',
-    title: { lead: 'Simple for you.', accent: 'Rigorous for us.' },
-    steps: [
-      {
-        n: '01',
-        title: 'Listen',
-        copy: 'Clarify the request, the priorities, the constraints and the level of confidentiality required.'
-      },
-      {
-        n: '02',
-        title: 'Structure',
-        copy: 'Map the options, verify every counterparty and build the plan of action.'
-      },
-      {
-        n: '03',
-        title: 'Execute',
-        copy: 'Coordinate partners, anticipate risk and keep the follow-up continuous.'
-      },
-      {
-        n: '04',
-        title: 'Deliver',
-        copy: 'Confirm the result, hand over what matters and stay available once the mission closes.'
-      }
-    ]
-  },
-
-  territory: {
-    eyebrow: 'Rooted locally · Operating internationally',
-    title: { lead: 'Based on the French Riviera.', accent: 'Present wherever it matters.' },
-    cities: [
-      'Cannes',
-      'Monaco',
-      'Nice',
-      'Antibes',
-      'Saint-Tropez',
-      'Paris',
-      'Geneva',
-      'Milan',
-      'London',
-      'Dubai'
-    ]
-  },
-
-  manifesto: {
-    quote:
-      '“True quality is not noticed in what it shows, but in everything it makes simple.”'
   },
 
   contact: {

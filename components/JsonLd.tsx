@@ -33,7 +33,7 @@ export function JsonLd({ locale }: { locale: Locale }) {
         latitude: site.geo.lat,
         longitude: site.geo.lng
       },
-      areaServed: content.territory.cities.map((name) => ({ '@type': 'City', name })),
+      areaServed: site.areaServed.map((name) => ({ '@type': 'City', name })),
       availableLanguage: locales.map((l) => htmlLang[l]),
       hasOfferCatalog: {
         '@type': 'OfferCatalog',

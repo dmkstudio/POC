@@ -29,7 +29,6 @@ export type SiteContent = {
   nav: {
     philosophy: string;
     services: string;
-    method: string;
     contact: string;
     openMenu: string;
     closeMenu: string;
@@ -83,26 +82,6 @@ export type SiteContent = {
       /** Revealed only when the direction is opened. */
       services: string[];
     }[];
-  };
-
-  method: {
-    eyebrow: string;
-    title: Headline;
-    steps: {
-      n: string;
-      title: string;
-      copy: string;
-    }[];
-  };
-
-  territory: {
-    eyebrow: string;
-    title: Headline;
-    cities: string[];
-  };
-
-  manifesto: {
-    quote: string;
   };
 
   contact: {

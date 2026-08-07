@@ -8,9 +8,6 @@ import { Hero } from '@/components/sections/Hero';
 import { Philosophy } from '@/components/sections/Philosophy';
 import { Cinema } from '@/components/sections/Cinema';
 import { Services } from '@/components/sections/Services';
-import { Method } from '@/components/sections/Method';
-import { Territory } from '@/components/sections/Territory';
-import { Manifesto } from '@/components/sections/Manifesto';
 import { Contact } from '@/components/sections/Contact';
 import { Footer } from '@/components/sections/Footer';
 
@@ -30,9 +27,6 @@ export default function Page({ params }: { params: { locale: string } }) {
         <Philosophy content={content} />
         <Cinema content={content} />
         <Services content={content} />
-        <Method content={content} />
-        <Territory content={content} />
-        <Manifesto content={content} />
         <Contact content={content} locale={locale} />
       </main>
 

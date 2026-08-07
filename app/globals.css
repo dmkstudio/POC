@@ -9,14 +9,11 @@
      5.  Philosophy
      6.  Cinema
      7.  Services
-     8.  Method
-     9.  Territory
-     10. Manifesto
-     11. Contact + form
-     12. Footer
-     13. 404
-     14. Responsive
-     15. Reduced motion
+     8.  Contact + form
+     9.  Footer
+     10. 404
+     11. Responsive
+     12. Reduced motion
    ========================================================================== */
 
 /* 1. Tokens ---------------------------------------------------------------- */
@@ -97,8 +94,6 @@ button {
 .hero h1,
 .statement h2,
 .services h2,
-.method h2,
-.territory h2,
 .contact h2,
 .not-found h1 {
   font-family: var(--font-display);
@@ -110,8 +105,6 @@ button {
 .hero h1 em,
 .statement h2 em,
 .services h2 em,
-.method h2 em,
-.territory h2 em,
 .contact h2 em,
 .not-found h1 em {
   color: var(--gold);
@@ -374,9 +367,7 @@ button {
 .hero-media,
 .hero-media img,
 .cinema-image,
-.cinema-image img,
-.method-image img,
-.manifesto img {
+.cinema-image img {
   object-fit: cover;
 }
 
@@ -826,126 +817,7 @@ button {
   transform: translateX(4px);
 }
 
-/* 8. Method ---------------------------------------------------------------- */
-
-.method {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  min-height: 100vh;
-}
-
-.method-image {
-  position: relative;
-  min-height: 800px;
-}
-
-.method-copy {
-  padding: 120px 7vw;
-  background: var(--ink-panel);
-}
-
-.method h2 {
-  font-size: clamp(46px, 5.4vw, 82px);
-  margin: 26px 0 70px;
-}
-
-.method-step {
-  display: grid;
-  grid-template-columns: 60px 1fr;
-  border-top: 1px solid var(--line);
-  padding: 26px 0;
-}
-
-.method-step span {
-  color: var(--gold);
-  font-family: var(--font-display);
-}
-
-.method-step h3 {
-  font-family: var(--font-display);
-  font-size: 28px;
-  font-weight: 400;
-  margin: 0 0 8px;
-}
-
-.method-step p {
-  color: var(--muted);
-  line-height: 1.6;
-  margin: 0;
-}
-
-/* 9. Territory ------------------------------------------------------------- */
-
-.territory {
-  position: relative;
-  isolation: isolate;
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 9vw;
-}
-
-/* The coastline sits behind the whole section, dimmed and faded top and
-   bottom so it blends into the black page rather than forming a hard band. */
-.territory-media {
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  opacity: 0.28;
-  -webkit-mask-image: linear-gradient(180deg, transparent, #000 35%, #000 65%, transparent);
-  mask-image: linear-gradient(180deg, transparent, #000 35%, #000 65%, transparent);
-}
-
-.territory-media img {
-  object-fit: cover;
-}
-
-.territory h2 {
-  font-size: clamp(46px, 5.6vw, 88px);
-  margin-top: 28px;
-}
-
-.cities {
-  display: flex;
-  flex-direction: column;
-  border-top: 1px solid var(--line);
-}
-
-.cities span {
-  padding: 18px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 14px;
-  color: #c9c2b7;
-}
-
-/* 10. Manifesto ------------------------------------------------------------ */
-
-.manifesto {
-  height: 88vh;
-  min-height: 680px;
-  position: relative;
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
-
-.manifesto-shade {
-  position: absolute;
-  inset: 0;
-  background: rgba(8, 8, 6, 0.58);
-}
-
-.manifesto blockquote {
-  position: relative;
-  z-index: 1;
-  font-family: var(--font-display);
-  font-size: clamp(34px, 5.2vw, 84px);
-  line-height: 1.15;
-  max-width: 1200px;
-  margin: 0;
-  padding: 7vw;
-}
-
-/* 11. Contact + form ------------------------------------------------------- */
+/* 8. Contact + form ------------------------------------------------------- */
 
 .contact {
   display: flex;
@@ -1193,7 +1065,7 @@ button {
   background: rgba(255, 255, 255, 0.03);
 }
 
-/* 12. Footer --------------------------------------------------------------- */
+/* 9. Footer ---------------------------------------------------------------- */
 
 footer {
   border-top: 1px solid var(--line);
@@ -1215,7 +1087,7 @@ footer .brand {
   color: var(--ivory);
 }
 
-/* 13. 404 ------------------------------------------------------------------ */
+/* 10. 404 ------------------------------------------------------------------ */
 
 .not-found {
   min-height: 100svh;
@@ -1242,7 +1114,7 @@ footer .brand {
   margin-top: 20px;
 }
 
-/* 14. Responsive ----------------------------------------------------------- */
+/* 11. Responsive ----------------------------------------------------------- */
 
 @media (max-width: 1100px) {
   .service-row {
@@ -1315,10 +1187,6 @@ footer .brand {
     opacity: 0.22;
     -webkit-mask-image: linear-gradient(180deg, transparent, #000 45%, transparent);
     mask-image: linear-gradient(180deg, transparent, #000 45%, transparent);
-  }
-
-  .territory-media {
-    opacity: 0.2;
   }
 
   .statement-grid {
@@ -1437,42 +1305,6 @@ footer .brand {
     height: 420px;
   }
 
-  .method,
-  .territory {
-    grid-template-columns: 1fr;
-  }
-
-  .method-image {
-    min-height: 55vh;
-  }
-
-  .method-copy {
-    padding: 80px 22px;
-  }
-
-  .method h2 {
-    font-size: 42px;
-    margin-bottom: 46px;
-  }
-
-  .territory {
-    gap: 44px;
-  }
-
-  .territory h2 {
-    font-size: 42px;
-  }
-
-  .manifesto {
-    height: auto;
-    min-height: 70vh;
-  }
-
-  .manifesto blockquote {
-    font-size: 32px;
-    padding: 80px 22px;
-  }
-
   .contact h2 {
     font-size: 46px;
   }
@@ -1540,7 +1372,7 @@ footer .brand {
   }
 }
 
-/* 15. Reduced motion ------------------------------------------------------- */
+/* 12. Reduced motion ------------------------------------------------------- */
 
 @media (prefers-reduced-motion: reduce) {
   *,
