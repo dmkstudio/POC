@@ -51,20 +51,22 @@ export function MotionProvider({ children }: { children: React.ReactNode }) {
        * the cinema block stacks and the panels grow past the viewport, where
        * snapping would fight the reader instead of helping.
        *
-       * Deliberately a light touch. A wide threshold turns the snap into a
-       * wall — a short scroll gets dragged straight back and the page refuses
-       * to let you leave the block. At a fifth of a viewport it only tidies up
-       * the last stretch once you have already committed to the next block,
-       * and anywhere in between is left alone.
+       * Half a viewport, so wherever the scroll ends up it belongs to some
+       * block and is carried the rest of the way — each cinema scene lands
+       * dead centre rather than drifting between two.
+       *
+       * The debounce is what keeps that from feeling like a wall. Lenis keeps
+       * gliding for over a second after the last wheel tick; snapping before
+       * that reads a position the page is still travelling through and hauls
+       * the reader back to the block they were leaving. Waiting it out lets
+       * the scroll finish first, so the snap only ever tidies up the end.
        */
       if (window.matchMedia('(min-width: 901px)').matches) {
         const snap = new Snap(lenis, {
           type: 'proximity',
           duration: 0.7,
-          distanceThreshold: '20%',
-          // Sits just past Lenis's own glide, so the snap reads a settled
-          // position rather than one the page is still travelling through.
-          debounce: 900
+          distanceThreshold: '50%',
+          debounce: 1400
         });
         document
           .querySelectorAll<HTMLElement>('[data-snap]')

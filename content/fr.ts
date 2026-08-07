@@ -63,7 +63,7 @@ export const fr: SiteContent = {
     {
       kicker: 'Delivery',
       title: { lead: 'Jusqu’au dernier', accent: 'détail.' },
-      copy: 'De la première demande à la remise des clés, nous restons responsables du résultat.'
+      copy: 'Du premier échange à la dernière étape, le résultat reste sous notre responsabilité.'
     }
   ],
 

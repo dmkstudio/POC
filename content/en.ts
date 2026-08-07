@@ -63,7 +63,7 @@ export const en: SiteContent = {
     {
       kicker: 'Delivery',
       title: { lead: 'Down to the last', accent: 'detail.' },
-      copy: 'From the first request to the handover of the keys, the outcome stays our responsibility.'
+      copy: 'From the first conversation to the final step, the outcome stays our responsibility.'
     }
   ],
 

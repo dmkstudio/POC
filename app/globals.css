@@ -510,12 +510,13 @@ button {
 
 .statement-grid {
   margin-left: auto;
-  width: min(850px, 70vw);
+  width: min(920px, 74vw);
+  font-size: 18px;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 70px;
-  color: var(--muted);
-  line-height: 1.9;
+  gap: 64px;
+  color: #cdc7bc;
+  line-height: 1.8;
 }
 
 /* 6. Cinema ---------------------------------------------------------------- */
@@ -596,14 +597,17 @@ button {
 }
 
 .cinema-scene > div {
-  width: min(560px, 48%);
+  width: min(640px, 50%);
 }
 
+/* Capped so the longest heading — "Конфиденциальность" in Russian — still
+   sits on one line inside the column. Every scene shares this size, so the
+   type does not jump around as the scenes change. */
 .cinema-scene h3 {
   font-family: var(--font-display);
-  font-size: clamp(44px, 5.4vw, 88px);
-  line-height: 0.98;
-  margin: 22px 0 30px;
+  font-size: clamp(38px, 4.1vw, 62px);
+  line-height: 1.02;
+  margin: 20px 0 26px;
   font-weight: 400;
 }
 
@@ -613,6 +617,7 @@ button {
 }
 
 .cinema-scene > div > p:last-child {
+  font-size: 17px;
   line-height: 1.8;
   color: #cdc7bc;
 }
